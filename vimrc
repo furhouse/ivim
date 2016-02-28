@@ -774,9 +774,10 @@ if count(g:ivim_bundle_groups, 'move')
         let g:unite_source_grep_default_opts='--no-heading --no-color -a -H'
         let g:unite_source_grep_recursive_opt=''
     endif
-    function! s:unite_settings() " Use ESC to exit, and use C-J and C-K to move
+    function! s:unite_settings() " Use ESC to exit, C-U to clear the unite cache, and use C-J and C-K to move"
         nmap <buffer> <ESC> <plug>(unite_exit)
         imap <buffer> <ESC> <plug>(unite_exit)
+        imap <buffer> <C-U> <Plug>(unite_redraw)
         imap <buffer> <C-J> <Plug>(unite_select_next_line)
         imap <buffer> <C-K> <Plug>(unite_select_previous_line)
     endfunction
